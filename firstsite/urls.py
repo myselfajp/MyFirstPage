@@ -3,6 +3,6 @@ from django.urls import path
 
 urlpatterns = [
     path('',http_home),
-    path('about',http_about),
-    path('contact',http_contact)
+    path("about",http_about),
+    path("contact",http_contact)
 ]
