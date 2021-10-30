@@ -9,12 +9,6 @@ def http_contact(request):
 def http_about(request):
     return render(request,"firstsite\About.html")
 
-def http_blog_home(request):
-    return render(request,"firstsite\Blog-home.html")
-
-def http_blog_single(request):
-    return render(request,"firstsite\Blog-single.html")
-
 def http_elements(request):
     return render(request,"firstsite\Elements.html")
 
