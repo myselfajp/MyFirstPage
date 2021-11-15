@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    # image =
-    # author = 
+    image = models.CharField(default="#picture",max_length=255)
+    author = models.CharField(default="Ali Parsa",max_length=255)
     title = models.CharField(max_length=255)
     content = models.TextField()
     # tags = 

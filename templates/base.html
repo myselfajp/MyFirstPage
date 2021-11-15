@@ -64,12 +64,7 @@
                     <ul class="nav-menu">
                         <li><a href="{% url 'firstsite:index' %}">Home</a></li>
                         <li><a href="{% url 'firstsite:about' %}">About</a></li>
-                        <li class="menu-has-children"><a href="">Blog</a>
-                            <ul>
-                                <li><a href="{% url 'Blog:blog-home' %}">Blog Home</a></li>
-                                <li><a href="{% url 'Blog:blog-single' %}">Blog Single</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{% url 'Blog:blog-home' %}">Blog</a></li>
                         <li class="menu-has-children"><a href="">Pages</a>
                             <ul>
                                 <li><a href="{% url 'firstsite:elements' %}">Elements</a></li>
