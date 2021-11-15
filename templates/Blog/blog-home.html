@@ -114,13 +114,13 @@
 						<div class="feature-img">
 							<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg' %}" alt="">
 						</div>
-						<a class="posts-title" href="/blog/page-{{post.id}}">
+						<a class="posts-title" href="{% url 'Blog:blog-single' p1_id=post.id %}">
 							<h3>{{post.title}}</h3>
 						</a>
 						<p class="excert">
 							{{post.content}}
 						</p>
-						<a href="/blog/page-{{post.id}}" class="primary-btn">View More</a>
+						<a href="{% url 'Blog:blog-single' p1_id=post.id %}" class="primary-btn">View More</a>
 					</div>
 				</div>
 				{% endfor %}
