@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load Blog_tags %}
 {% block content %}
 <!-- start banner Area -->
 <section class="banner-area relative blog-home-banner" id="home">
@@ -111,7 +111,10 @@
 					</div>
 					<div class="col-lg-9 col-md-9 ">
 						<div class="feature-img">
-							<img class="img-fluid" src="{{post.image.url}}" alt="">
+							<img class="img-fluid" src="{{post.image.url}}" alt="" style="object-fit:cover;
+							width:540px;
+							height:270px;
+							border: solid 1px #CCC">
 						</div>
 						<a class="posts-title" href="{% url 'Blog:blog-single' p1_id=post.id %}">
 							<h3>{{post.title}}</h3>
@@ -159,10 +162,10 @@
 					</div>
 
 					<!-- includes area -->
-					{% include "Blog/category.html" %}
 					{% include "Blog/news-letter.html" %}
-					{% include "Blog/popular-posts.html" %}
+					{% latest_posts %}
 					{% include "Blog/tags.html" %}
+					{% post_categories %}
 
 				</div>
 			</div>

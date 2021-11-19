@@ -67,9 +67,10 @@
 				<div class="navigation-area">
 					<div class="row">
 						<!-- prev page area -->
-						{% if prev_p != None %}
+						
 						<div
 							class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+							{% if prev_p != None %}
 							<div class="thumb">
 								<a href="{% url 'Blog:blog-single' p1_id=prev_p.id %}"><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}" alt=""></a>
 							</div>
@@ -82,8 +83,9 @@
 									<h4>{{prev_p.title}}</h4>
 								</a>
 							</div>
+							{% endif %}
 						</div>
-						{% endif %}
+						
 						<!-- end of prev page area -->
 
 						<!-- next page area -->

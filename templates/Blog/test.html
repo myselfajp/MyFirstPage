@@ -1,4 +1,5 @@
 {% load static %}
+{% load Blog_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +12,10 @@
 
 <body>
 
-<p>{{posts}}</p>
-
+<p>test simple : {% plustwo 5 %}</p>
+<p>test filter : {{ posts.content|snippet:100}} </p>
+</br></br>
+{% popular_posts %}
 
 </body>
 
