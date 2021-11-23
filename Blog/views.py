@@ -14,7 +14,8 @@ def http_blog_home(request,cat_name=None):
     #take nowtime as utc
     utc_time_now=datetime.now(timezone.utc)
     #filter posts by published date and status
-    posts=Post.objects.exclude(published_date__gt= utc_time_now).filter(status=1)
+    posts=Post.objects.filter(status=1).order_by("published_date")
+
     if cat_name:
         posts=posts.filter(category__name=cat_name)
 

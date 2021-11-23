@@ -1,5 +1,6 @@
 from django import template
 from Blog.models import Post,category
+
 register = template.Library()
 
 @register.simple_tag
@@ -12,7 +13,7 @@ def snippet(x,arg=25):
 
 @register.inclusion_tag("Blog/popular-posts.html")
 def latest_posts():
-    posts=Post.objects.filter(status=1).order_by("-published_date")
+    posts=Post.objects.filter(status=1).order_by("-published_date")[0:3]
     return {"posts":posts}
 
 @register.inclusion_tag("Blog/category.html")
