@@ -34,8 +34,6 @@ def http_blog_home(request,cat_name=None):
 
 
 
-
-
 def http_blog_search(request):
     posts=Post.objects.filter(status=1,published_date__lte =datetime.now(timezone.utc))
     if request.method == 'GET':

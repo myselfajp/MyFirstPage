@@ -12,6 +12,9 @@ def http_about(request):
 def http_elements(request):
     return render(request,"firstsite\Elements.html")
 
+def http_test(request):
+    return render(request,"test.html")
+
 
 
 
