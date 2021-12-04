@@ -12,7 +12,7 @@ def snippet(x,arg=25):
     return x[:arg]
 
 @register.inclusion_tag("Blog/popular-posts.html")
-def latest_posts():
+def blog_latest_posts():
     posts=Post.objects.filter(status=1).order_by("-published_date")[0:3]
     return {"posts":posts}
 
@@ -24,3 +24,10 @@ def post_categories():
     for name in categories:
         dic_categories[name]=posts.filter(category=name).count()
     return {"categories":dic_categories}
+
+
+@register.inclusion_tag("firstsite/latest-post.html")
+def latest_posts():
+    posts=Post.objects.filter(status=1).order_by("-published_date")[0:6]
+    return {"posts":posts}
+
