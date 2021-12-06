@@ -10,16 +10,8 @@
     
     <form action="{% url 'firstsite:test'%}" method="post" >
         {% csrf_token %}
-        <lable>Name:</lable>
-        <input name="name" type="text"><br>
-        <lable>Email:</lable>
-        <input name="email" type="email"><br>
-        <label>Subject:</label>
-        <input name="subject" type="text"><br>
-        <label>Messege:</label>
-        <input name="messege" type="text"><br>
+        {{form.as_p}}
         <button type="submit">Submit</button>
-
     </form>
 
 
