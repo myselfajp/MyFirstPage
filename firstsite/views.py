@@ -1,7 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 
-from firstsite.forms import NameForm
+from firstsite.forms import ContactForm
 
 def http_home(request):
     return render(request,"firstsite\Index.html")
@@ -17,16 +17,12 @@ def http_elements(request):
 
 def http_test(request):
     if request.method== 'POST':
-        form=NameForm(request.POST)
+        form=ContactForm(request.POST)
         if form.is_valid():
-            name=form.cleaned_data['name']
-            email=form.cleaned_data['email']
-            subject=form.cleaned_data['subject']
-            message=form.cleaned_data['message']
-            return HttpResponse('name= %s <br> email= %s <br> subject= %s <br> message= %s'%(name,email,subject,message))
+            return HttpResponse('Name= %s\nEmail= %s\nSubject= %s\nMessage= \n%s '%(form.cleaned_data['name'],form.cleaned_data['email'],form.cleaned_data['subject'],form.cleaned_data['message']),content_type="text/plain")
         else:
             return HttpResponse('not valid')
-    form = NameForm()
+    form = ContactForm()
     return render(request,"test.html",{'form':form})
 
 
