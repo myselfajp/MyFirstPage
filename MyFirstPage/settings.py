@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'Blog.apps.BlogConfig',
     #modules
     'robots',
-    'debug_toolbar'
+    'debug_toolbar',
+    'django_summernote'
 ]
 
 SITE_ID = 1
