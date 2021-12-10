@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firstsite.apps.FirstsiteConfig',
-    'Blog.apps.BlogConfig'
+    'Blog.apps.BlogConfig',
+    'django.contrib.sites',
+    'django.contrib.sitemaps'
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
