@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'firstsite.apps.FirstsiteConfig',
-    'Blog.apps.BlogConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    #my sites apps
+    'firstsite.apps.FirstsiteConfig',
+    'Blog.apps.BlogConfig',
+    #modules
     'robots',
-     'debug_toolbar'
+    'debug_toolbar'
 ]
 
 SITE_ID = 1
