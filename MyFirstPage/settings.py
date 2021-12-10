@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'Blog.apps.BlogConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'robots'
+    'robots',
+     'debug_toolbar'
 ]
 
 SITE_ID = 1
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'MyFirstPage.urls'
@@ -145,6 +147,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
     BASE_DIR / "statics",
+]
+
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 
