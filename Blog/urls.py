@@ -7,6 +7,7 @@ urlpatterns = [
 
     path("blog/",http_blog_home,name='blog-home'),
     path("blog/category/<str:cat_name>",http_blog_home,name='blog-category'),
+    path("blog/tags/<str:tag_name>",http_blog_home,name='blog-tag'),
     path("blog/post-<str:p1_id>",http_blog_single,name='blog-single'),
     path("blog/test",http_test,name='test-html'),
     path("blog/search/",http_blog_search,name='search')

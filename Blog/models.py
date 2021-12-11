@@ -8,12 +8,17 @@ class category(models.Model):
     def __str__(self):
         return self.name
         
+class tag(models.Model):
+    name=models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     image = models.ImageField(upload_to='Blog/',default='Blog/default.jpg')
     author = models.ForeignKey(User, on_delete=models.SET_NULL,null=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
-    # tags = 
+    tag = models.ManyToManyField(tag)
     category = models.ManyToManyField(category)
     counted_views = models.IntegerField(default=0)
     status = models.BooleanField(default=False)

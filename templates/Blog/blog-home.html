@@ -120,7 +120,7 @@
 							<h3>{{post.title}}</h3>
 						</a>
 						<p class="excert">
-							{{post.content|linebreaks|truncatewords:20}}
+							{{post.content|safe|truncatewords:20}}
 						</p>
 						<a href="{% url 'Blog:blog-single' p1_id=post.id %}" class="primary-btn">View More</a>
 					</div>
@@ -174,7 +174,7 @@
 					{% include "Blog/search.html" %}
 					{% include "Blog/news-letter.html" %}
 					{% blog_latest_posts %}
-					{% include "Blog/tags.html" %}
+					{% post_tag %}
 					{% post_categories %}
 
 				</div>

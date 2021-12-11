@@ -10,14 +10,16 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 # Create your views here.
 
 
-def http_blog_home(request,cat_name=None):
+def http_blog_home(request,**kwargs):
     #take nowtime as utc
     utc_time_now=datetime.now(timezone.utc)
     #filter posts by published date and status
     posts=Post.objects.filter(status=1).order_by("published_date")
 
-    if cat_name:
-        posts=posts.filter(category__name=cat_name)
+    if kwargs.get('cat_name'):
+        posts=posts.filter(category__name=kwargs['cat_name'])
+    if kwargs.get('tag_name'):
+        posts=posts.filter(tag__name=kwargs['tag_name'])
 
     posts = Paginator(posts,2)
     try:
