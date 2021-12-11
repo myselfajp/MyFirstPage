@@ -43,4 +43,7 @@ class comment(models.Model):
     updated_date= models.DateTimeField(auto_now=True)
     approved=models.BooleanField(default=False)
     
-    
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ('-created_date',)

@@ -1,7 +1,7 @@
 from django.core import paginator
 from django.http import request
 from django.shortcuts import get_object_or_404, render
-from Blog.models import Post
+from Blog.models import Post,comment
 from datetime import datetime,timezone
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -58,10 +58,13 @@ def http_blog_single(request,p1_id):
     posts.counted_views+=1
     posts.save()
     
+    comments=comment.objects.filter(post=p1_id , approved=1)
+
     next_p=Post.objects.filter(id__gt=posts.id, status = 1, published_date__lte =datetime.now(timezone.utc)).order_by('id').first()
     prev_p=Post.objects.filter(id__lt=posts.id, status = 1, published_date__lte =datetime.now(timezone.utc)).order_by('-id').first()
 
     context={
+    "comments": comments,
     "posts":posts,
     "next_p":next_p,
     "prev_p":prev_p

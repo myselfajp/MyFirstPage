@@ -1,11 +1,17 @@
 from django import template
-from Blog.models import Post,category,tag
+from Blog.models import Post,category,tag,comment
 
 register = template.Library()
 
 @register.simple_tag
 def plustwo(x):
     return x+2
+
+@register.simple_tag
+def CommentCounter(post_id):
+    count=comment.objects.filter(post=post_id,approved=1).count()
+    return count
+
 
 @register.filter
 def snippet(x,arg=25):
