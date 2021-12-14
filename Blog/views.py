@@ -2,8 +2,11 @@ from django.core import paginator
 from django.http import request
 from django.shortcuts import get_object_or_404, render
 from Blog.models import Post,comment
+from Blog.forms import CommentForm
 from datetime import datetime,timezone
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.contrib import messages
+
 
 
 
@@ -53,6 +56,15 @@ def http_blog_search(request):
 
 
 def http_blog_single(request,p1_id):
+    if request.method == 'POST':
+        form=CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Your ticket sent.')
+        else:
+            messages.error(request,'Your ticket did\'nt sent.')
+
+
     
     posts=get_object_or_404(Post ,id=p1_id,status=1)
     posts.counted_views+=1

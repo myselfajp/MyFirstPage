@@ -6,7 +6,6 @@ from django.contrib import messages
 
 
 
-
 def http_about(request):
     return render(request,"firstsite\About.html")
 
@@ -20,7 +19,6 @@ def http_home(request):
 
 
 
-
 def http_contact(request):
     if request.method == 'POST':
         form= ContactForm(request.POST)
@@ -29,9 +27,11 @@ def http_contact(request):
             form.name="unknown"
             form.save()
             messages.success(request,'Your ticket sent.')
+        
         else:
             messages.error(request,'Your ticket did\'nt sent.')
-    return render(request,"firstsite\Contact.html")
+    form=ContactForm()
+    return render(request,"firstsite\Contact.html",{'form':form})
 
 
 
@@ -50,7 +50,7 @@ def http_newsletter(request):
                 messages.error(request,'you are saved already.')
                 return HttpResponseRedirect("/")
         else:
-            messages.error(request,'you are saved already.')
+            messages.error(request,'wrong input.')
             return HttpResponseRedirect("/")
 
 

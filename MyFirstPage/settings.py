@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     #modules
     'robots',
     'debug_toolbar',
-    'django_summernote'
+    'django_summernote',
+    'captcha',
 ]
 
 SITE_ID = 1
