@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    
     #my sites apps
     'firstsite.apps.FirstsiteConfig',
     'Blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
     #modules
     'robots',
     'debug_toolbar',
@@ -154,9 +156,9 @@ STATICFILES_DIRS = [
 ]
 
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 
 
 

@@ -15,10 +15,12 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/',include('accounts.urls')),
     path('',include('firstsite.urls')),
-    path('',include('Blog.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap'),
+    path('blog/',include('Blog.urls')),
+
+
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', include('robots.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
     path('summernote/',include('django_summernote.urls')),
