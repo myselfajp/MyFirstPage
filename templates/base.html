@@ -52,9 +52,11 @@
                         <ul>
                             {% if request.user.is_authenticated %}
                             <li><a href="#">{{ request.user }}'s profile</a></li>
+                            <li> <a href="{% url 'accounts:logout' %}"> Log Out </a> </li>
                             {% else %}
-                            <li><a href="{% url 'accounts:login' %}">LogIn</a></li>
+                            <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                             {% endif %}
+
                         </ul>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-6 header-top-right">

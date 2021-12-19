@@ -1,9 +1,13 @@
 from django.shortcuts import render,redirect,HttpResponse
-from django.contrib.auth import authenticate , login
+from django.contrib.auth import authenticate , login ,logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
-
 # Create your views here.
+
+
+
+
 def http_login(request):
     
 
@@ -27,5 +31,12 @@ def http_login(request):
         return render(request, 'accounts\login.html',context) 
     else:
         return HttpResponse('sen varsin')
-    
+
+
+
+
+@login_required
+def http_logout(request):
+    logout(request)
+    return redirect('/')
     
