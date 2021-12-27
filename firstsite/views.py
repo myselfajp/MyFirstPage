@@ -20,6 +20,7 @@ def http_home(request):
 
 
 def http_contact(request):
+    form=ContactForm()
     if request.method == 'POST':
         form= ContactForm(request.POST)
         if form.is_valid():
@@ -30,7 +31,6 @@ def http_contact(request):
         
         else:
             messages.error(request,'Your ticket did\'nt sent.')
-    form=ContactForm()
     return render(request,"firstsite\Contact.html",{'form':form})
 
 
