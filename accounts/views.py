@@ -1,6 +1,7 @@
 from django.shortcuts import redirect ,render
 from django.contrib.auth import logout,login,authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import signup_form
 
@@ -8,9 +9,13 @@ from .forms import signup_form
 def http_login(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
-            username = request.POST.get('username')
+            a=User.objects.filter(email=request.POST.get('username').strip())
+            if a:
+                user_name=a[0].username
+            else:
+                user_name = request.POST.get('username')
             password = request.POST.get('password')
-            user = authenticate(request,username=username,password=password)
+            user = authenticate(request,username=user_name,password=password)
             if user:
                 login(request,user)
                 messages.success(request,'Login successfull .')
