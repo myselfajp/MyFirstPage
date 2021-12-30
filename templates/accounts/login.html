@@ -5,7 +5,7 @@
 
 
 <head>
-	<title>Travel-Login</title>
+	<title>Travel</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -76,7 +76,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-						<form method ="post" action="{% url 'accounts:login' %}" class="signin-form">
+						<form method ="post" action="{% url 'login' %}" class="signin-form">
 							{%csrf_token%}
 							<div class="form-group">
 								<input name="username" type="text" class="form-control" placeholder="Username" required>
@@ -98,12 +98,14 @@
 									</label>
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
+									<a style="color: #fff">
+										 <a  href="{% url 'reset_password' %}" >Forgot Password?</a>
+									</a>
 								</div>
 							</div>
 							<div class="w-50 text-md-right">
 								<a  style="color: #fff">
-									You don't have account? <a href="{% url 'accounts:signup' %}" >SignUp</a> 
+									You don't have account? <a href="{% url 'signup' %}" >SignUp</a> 
 								</a>
 							</div>
 						</form>

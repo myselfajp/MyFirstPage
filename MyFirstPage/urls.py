@@ -6,14 +6,16 @@ from django.contrib.sitemaps.views import sitemap
 from firstsite.sitemaps import StaticViewSitemap
 from Blog.sitemaps import BlogSitemap
 import debug_toolbar
+from django.contrib.auth import views as auth_views
 
 
 sitemaps = {
     'static': StaticViewSitemap,
-    'Blog':BlogSitemap
+    'Blog': BlogSitemap
 }
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
     path('',include('firstsite.urls')),
@@ -25,6 +27,7 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('summernote/',include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
+    
 ]
 
 
