@@ -7,3 +7,4 @@ django-robots
 six
 django-debug-toolbar
 django-summernote
+django-simple-captcha
