@@ -8,9 +8,9 @@ from MyFirstPage.settings import *
 SECRET_KEY = 'django-insecure-a6h*k(90i87$4z@id&fi6f$0s)x8sh19g-7a%8+tb@q$o=&$x+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['alijaliliparsa.pythonanywhere.com']
 
 
 SITE_ID = 1
