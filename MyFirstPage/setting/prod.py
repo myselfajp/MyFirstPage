@@ -26,6 +26,29 @@ DATABASES = {
 
 
 
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    
+    #my sites apps
+    'firstsite.apps.FirstsiteConfig',
+    'Blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
+    #modules
+    'robots',
+    'django_summernote',
+    'captcha',
+]
+
+
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'media'
 

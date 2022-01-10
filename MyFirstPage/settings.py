@@ -19,30 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-# Application definition
-
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    
-    #my sites apps
-    'firstsite.apps.FirstsiteConfig',
-    'Blog.apps.BlogConfig',
-    'accounts.apps.AccountsConfig',
-    #modules
-    'robots',
-    'debug_toolbar',
-    'django_summernote',
-    'captcha',
-]
-
-
 ROBOTS_USE_SITEMAP = False
 ROBOTS_USE_HOST = False
 

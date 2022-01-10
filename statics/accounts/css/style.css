@@ -58,7 +58,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff; 
-  overflow: hidden;
+  overflow: auto;
 }
   
 [tabindex="-1"]:focus {
@@ -8143,17 +8143,6 @@ body {
   position: relative;
   z-index: 0;
   padding: 0; }
-  body:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    background: #000;
-    opacity: .7;
-    z-index: -1; }
-
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;

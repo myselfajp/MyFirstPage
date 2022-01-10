@@ -13,12 +13,16 @@
 	<link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/main.css'%}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    
+    <link rel="stylesheet" href="{% static 'css/linearicons.css'%}">
+
 </head>
 
 
 
-<body class="img js-fullheight" background="{% static 'accounts/images/bg.jpg' %}" >
+<body class="img js-fullheight" background="{% static 'accounts/images/bg.jpg' %}" style="background-size: 1800px;
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;">
 
 
 
@@ -35,8 +39,8 @@
 			</div>
 		</div>
 		{% endfor %}
-	
-	
+
+
 
         <div class="container main-menu">
             <div class="row align-items-center justify-content-between d-flex">
@@ -66,13 +70,9 @@
         </div>
     </header>
 
-
 	<section class="ftco-section">
+
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-				</div>
-			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
@@ -105,11 +105,11 @@
 							</div>
 							<div class="w-50 text-md-right">
 								<a  style="color: #fff">
-									You don't have account? <a href="{% url 'signup' %}" >SignUp</a> 
+									You don't have account? <a href="{% url 'signup' %}" >SignUp</a>
 								</a>
 							</div>
 						</form>
-						
+
 					</div>
 				</div>
 			</div>
