@@ -7,15 +7,15 @@ from django.contrib import messages
 
 
 def http_about(request):
-    return render(request,"firstsite\About.html")
+    return render(request,"firstsite/about.html")
 
 
 def http_elements(request):
-    return render(request,"firstsite\Elements.html")
+    return render(request,"firstsite/elements.html")
 
 
 def http_home(request):
-    return render(request,"firstsite\Index.html")
+    return render(request,"firstsite/index.html")
 
 
 
@@ -31,7 +31,7 @@ def http_contact(request):
         
         else:
             messages.error(request,'Your ticket did\'nt sent.')
-    return render(request,"firstsite\Contact.html",{'form':form})
+    return render(request,"firstsite/contact.html",{'form':form})
 
 
 

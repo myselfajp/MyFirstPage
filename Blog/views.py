@@ -35,7 +35,7 @@ def http_blog_home(request,**kwargs):
         posts = posts.get_page(1)
 
     context={"posts":posts}
-    return render(request,"Blog\Blog-home.html",context)
+    return render(request,"Blog/blog-home.html",context)
 
 
 
@@ -82,13 +82,12 @@ def http_blog_single(request,p1_id):
     "next_p":next_p,
     "prev_p":prev_p
     }
-    return render(request,"Blog\Blog-single.html",context)
+    return render(request,"Blog/blog-single.html",context)
     
 
 
 
 
 def http_test(request):
-    posts=get_object_or_404(Post,id=1)
-    context={"posts":posts}
-    return render(request,"Blog\\test.html",context)
+    
+    return render(request,"Blog/test.html")
