@@ -54,9 +54,6 @@ def http_newsletter(request):
             return HttpResponseRedirect("/")
 
 
-
-
-
 def http_test(request):
     if request.method== 'POST':
         form=ContactForm(request.POST)
